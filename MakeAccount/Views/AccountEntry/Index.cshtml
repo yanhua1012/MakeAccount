@@ -6,7 +6,7 @@
 }
 
 <div class="well">
-    @using (Html.BeginForm("Add", "AccountEntry", FormMethod.Post, new { @class = "form-horizontal" }))
+    @using (Html.BeginForm("Index", "AccountEntry", FormMethod.Post, new { @class = "form-horizontal" }))
     {
         <div class="form-group" >
             @Html.LabelFor(m => m.AccountType, "類別", new { @class = "col-sm-2 control-label" })
@@ -53,4 +53,13 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @{ 
+        if (ViewBag.IsAdd != null)
+        {
+            <script type="text/javascript">
+                window.alert("@(ViewBag.IsAdd ? "新增成功" : "新增失敗")");
+            </script>
+        }
+
+    }
 }
