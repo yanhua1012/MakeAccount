@@ -6,7 +6,13 @@ namespace MakeAccount.Models
     /// <summary>
     /// 記帳類別:收入、支出
     /// </summary>
-    public enum EnumAccountType { Expense, Revenue }
+    public enum EnumAccountType
+    {
+        [Display(Name = "支出")]
+        Expense,
+        [Display(Name = "收入")]
+        Revenue
+    }
 
     public class AccountEntryModels
     {
