@@ -14,12 +14,12 @@ namespace MakeAccount.Models
         Revenue
     }
 
-    public class AccountEntryModels
+    public class AccountBookViewModels
     {
         /// <summary>
         /// #
         /// </summary>
-        public int Sn { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "類別為必填")]
         /// <summary>

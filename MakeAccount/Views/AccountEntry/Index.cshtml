@@ -1,5 +1,5 @@
 ﻿@using MakeAccount.Models;
-@model AccountEntryModels
+@model AccountBookViewModels
 @{
     ViewBag.Title = "我的記帳本";
     Layout = "~/Views/Shared/_MoneyTemplete.cshtml";
@@ -11,7 +11,7 @@
         <div class="form-group" >
             @Html.LabelFor(m => m.AccountType, "類別", new { @class = "col-sm-2 control-label" })
             <div class="col-sm-10">
-                @Html.EnumDropDownListFor(x => x.AccountType, "請選擇", new { @class = "form-control" })
+                @Html.EnumDropDownListFor(m => m.AccountType , "請選擇", new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.AccountType, "", new { @class = "text-danger" })
             </div>
         </div>

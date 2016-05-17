@@ -1,5 +1,5 @@
 ﻿@using MakeAccount.Models
-@model IEnumerable<AccountEntryModels>
+@model IEnumerable<AccountBookViewModels>
 @{
     Layout = null;
 }
@@ -12,11 +12,12 @@
                 <th>日期</th>
                 <th>金額</th>
             </tr>
+            @{int sn = 1; }
             @foreach (var accountEntry in Model)
             {
                 <tr>
                     <td>
-                        @accountEntry.Sn
+                        @(sn++)
                     </td>
                     <td>
                         @(accountEntry.AccountType == EnumAccountType.Expense ? "支出" : "收入")
