@@ -1,6 +1,5 @@
 ﻿using MakeAccount.Models;
 using MakeAccount.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,7 +26,7 @@ namespace MakeAccount.Services
         {
             this.Create(new AccountBook
             {
-                Id = Guid.NewGuid(),
+                Id = accountBook.Id,
                 Categoryyy = accountBook.AccountType == EnumAccountType.Expense ? 0 : 1,
                 Dateee = accountBook.KeepDate,
                 Amounttt = decimal.ToInt32(accountBook.Amount),

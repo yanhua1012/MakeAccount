@@ -16,6 +16,8 @@ namespace MakeAccount.Models
 
     public class AccountBookViewModels
     {
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage = "類別為必填")]
         /// <summary>
         /// 類別

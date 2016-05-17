@@ -1,6 +1,7 @@
 ﻿using MakeAccount.Models;
 using MakeAccount.Repositories;
 using MakeAccount.Services;
+using System;
 using System.Web.Mvc;
 
 namespace MakeAccount.Controllers
@@ -24,6 +25,7 @@ namespace MakeAccount.Controllers
         [HttpPost]
         public ActionResult Index(AccountBookViewModels newAccountEntry)
         {
+            newAccountEntry.Id = Guid.NewGuid();
             _accountBookSvc.Add(newAccountEntry);
             _accountBookSvc.Commit();
             return RedirectToAction("Index");

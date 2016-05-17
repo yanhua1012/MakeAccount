@@ -2,6 +2,7 @@
 @model IEnumerable<AccountBookViewModels>
 @{
     Layout = null;
+    int sn = 1;
 }
 <div class="row">
     <div class="col-md-12">
@@ -12,7 +13,6 @@
                 <th>日期</th>
                 <th>金額</th>
             </tr>
-            @{int sn = 1; }
             @foreach (var accountEntry in Model)
             {
                 <tr>
