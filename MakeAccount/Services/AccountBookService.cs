@@ -1,5 +1,6 @@
 ﻿using MakeAccount.Models;
 using MakeAccount.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,7 +16,6 @@ namespace MakeAccount.Services
         {
             return this.LookupAll().Select(m => new AccountBookViewModels
             {
-                Id = m.Id,
                 AccountType = m.Categoryyy == 0 ? EnumAccountType.Expense : EnumAccountType.Revenue,
                 KeepDate = m.Dateee,
                 Amount = m.Amounttt,
@@ -27,7 +27,7 @@ namespace MakeAccount.Services
         {
             this.Create(new AccountBook
             {
-                Id = accountBook.Id,
+                Id = Guid.NewGuid(),
                 Categoryyy = accountBook.AccountType == EnumAccountType.Expense ? 0 : 1,
                 Dateee = accountBook.KeepDate,
                 Amounttt = decimal.ToInt32(accountBook.Amount),
