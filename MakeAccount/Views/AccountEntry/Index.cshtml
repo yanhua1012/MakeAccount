@@ -53,13 +53,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @{ 
-        if (ViewBag.IsAdd != null)
-        {
-            <script type="text/javascript">
-                window.alert("@(ViewBag.IsAdd ? "新增成功" : "新增失敗")");
-            </script>
-        }
-
-    }
 }

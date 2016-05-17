@@ -48,11 +48,9 @@ namespace MakeAccount.Controllers
         [HttpPost]
         public ActionResult Index(AccountEntryModels newAccountEntry)
         {
-            ModelState.Clear();
             newAccountEntry.Sn = fakeAccounts.Max(x => x.Sn) + 1;
             fakeAccounts.Enqueue(newAccountEntry);
-            ViewBag.IsAdd = true;
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
